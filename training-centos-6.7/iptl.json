@@ -13,7 +13,7 @@
       "boot_wait": "10s",
       "disk_size": 40520,
       "guest_os_type": "RedHat_64",
-      "http_directory": "/Users/ashwinichaudhari/Documents/packer/http",
+      "http_directory": "/http",
 
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
@@ -53,52 +53,52 @@
 
     {
       "type": "file",
-      "source": "/Users/ashwinichaudhari/Documents/packer/scripts/public_repo_enable.sh",
+      "source": "/scripts/public_repo_enable.sh",
       "destination": "/tmp/public_repo_enable.sh"
     },
 
     {
       "type": "file",
-      "source": "/Users/ashwinichaudhari/Documents/packer/scripts/public_repo_disable.sh",
+      "source": "/scripts/public_repo_disable.sh",
       "destination": "/tmp/public_repo_disable.sh"
     },
 
     {
 
       "type": "file",
-      "source": "/Users/ashwinichaudhari/Documents/packer/repo/puppet.tar.gz",
+      "source": "puppet.tar.gz",
       "destination": "/tmp/puppet.tar.gz"
     },
 
     {
 
       "type": "file",
-      "source": "/Users/ashwinichaudhari/Documents/packer/repo/chef.tar.gz",
+      "source": "chef.tar.gz",
       "destination": "/tmp/chef.tar.gz"      
     },
     {
 
       "type": "file",
-      "source": "/Users/ashwinichaudhari/Documents/packer/repo/docker.tar.gz",
+      "source": "docker.tar.gz",
       "destination": "/tmp/docker.tar.gz"      
     },
     {
 
       "type": "file",
-      "source": "/Users/ashwinichaudhari/Documents/packer/repo/java.tar.gz",
+      "source": "java.tar.gz",
       "destination": "/tmp/java.tar.gz"      
     },
 
     {
 
       "type": "file",
-      "source": "/Users/ashwinichaudhari/Documents/packer/repo/lamp.tar.gz",
+      "source": "lamp.tar.gz",
       "destination": "/tmp/lamp.tar.gz"      
     },
 
     {
       "type": "file",
-      "source": "/Users/ashwinichaudhari/Documents/packer/install.tar.gz",
+      "source": "install/tar.gz",
       "destination": "/tmp/install.tar.gz"
     },
 
@@ -108,14 +108,14 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "/Users/ashwinichaudhari/Documents/packer/scripts/mkdir.sh",
-            "/Users/ashwinichaudhari/Documents/packer/scripts/base.sh",
-            "/Users/ashwinichaudhari/Documents/packer/scripts/localinstall.sh",
-            "/Users/ashwinichaudhari/Documents/packer/scripts/localrepo.sh",
-            "/Users/ashwinichaudhari/Documents/packer/scripts/vagrant.sh",
-            "/Users/ashwinichaudhari/Documents/packer/scripts/virtualbox.sh",
-            "/Users/ashwinichaudhari/Documents/packer/scripts/motd.sh",
-            "/Users/ashwinichaudhari/Documents/packer/scripts/cleanup.sh"
+            "/scripts/mkdir.sh",
+            "/scripts/base.sh",
+            "/scripts/localinstall.sh",
+            "/scripts/localrepo.sh",
+            "/scripts/vagrant.sh",
+            "/scripts/virtualbox.sh",
+            "/scripts/motd.sh",
+            "/scripts/cleanup.sh"
           
 
           ]
