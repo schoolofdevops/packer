@@ -98,7 +98,7 @@
 
     {
       "type": "file",
-      "source": "install/tar.gz",
+      "source": "install.tar.gz",
       "destination": "/tmp/install.tar.gz"
     },
 
