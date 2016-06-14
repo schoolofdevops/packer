@@ -13,7 +13,7 @@
       "boot_wait": "10s",
       "disk_size": 40520,
       "guest_os_type": "RedHat_64",
-      "http_directory": "/http",
+      "http_directory": "training-centos-6.7/http",
 
       "iso_url": "{{user `iso_url`}}",
       "iso_checksum": "{{user `iso_checksum`}}",
@@ -53,13 +53,13 @@
 
     {
       "type": "file",
-      "source": "/scripts/public_repo_enable.sh",
+      "source": "training-centos-6.7/scripts/public_repo_enable.sh",
       "destination": "/tmp/public_repo_enable.sh"
     },
 
     {
       "type": "file",
-      "source": "/scripts/public_repo_disable.sh",
+      "source": "training-centos-6.7/scripts/public_repo_disable.sh",
       "destination": "/tmp/public_repo_disable.sh"
     },
 
@@ -108,14 +108,14 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "/scripts/mkdir.sh",
-            "/scripts/base.sh",
-            "/scripts/localinstall.sh",
-            "/scripts/localrepo.sh",
-            "/scripts/vagrant.sh",
-            "/scripts/virtualbox.sh",
-            "/scripts/motd.sh",
-            "/scripts/cleanup.sh"
+            "training-centos-6.7/scripts/mkdir.sh",
+            "training-centos-6.7/scripts/base.sh",
+            "training-centos-6.7/scripts/localinstall.sh",
+            "training-centos-6.7/scripts/localrepo.sh",
+            "training-centos-6.7/scripts/vagrant.sh",
+            "training-centos-6.7/scripts/virtualbox.sh",
+            "training-centos-6.7/scripts/motd.sh",
+            "training-centos-6.7scripts/cleanup.sh"
           
 
           ]
