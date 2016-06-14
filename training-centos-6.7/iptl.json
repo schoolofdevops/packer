@@ -115,7 +115,7 @@
             "training-centos-6.7/scripts/vagrant.sh",
             "training-centos-6.7/scripts/virtualbox.sh",
             "training-centos-6.7/scripts/motd.sh",
-            "training-centos-6.7scripts/cleanup.sh"
+            "training-centos-6.7/scripts/cleanup.sh"
           
 
           ]
