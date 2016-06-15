@@ -4,11 +4,11 @@
     
 **Run packer command with default environment** 
   
-    sudo packer build -var-file=training-centos-6.7/vars.json.template training-centos-6.7/iptl.json
+    sudo packer build -var-file=training/vars.json.template training/iptl.json
 
 **To enable logs and run for a virtual box iso**   
 	
-	  export PACKER_LOG_PATH=./log &&  export  PACKER_LOG=1 && packer build -var-file=vars.json.template -only=virtualbox-iso packer-centos.json**	 
+	  export PACKER_LOG_PATH=./log &&  export  PACKER_LOG=1 && packer build -var-file=training/vars.json.template -only=virtualbox-iso training/iptl.json**	 
       
       
 ###Build using jenkins:-
@@ -19,23 +19,15 @@
       
 **Execute shell command**
 
-        export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/puppetlabs/bin
-        
-        sudo /usr/local/bin/wget https://s3-us-west-2.amazonaws.com/packer-initcron/install.tar.gz
-        
-        sudo /usr/local/bin/wget https://s3-us-west-2.amazonaws.com/packer-initcron/repo/chef.tar.gz
-        
-        sudo /usr/local/bin/wget https://s3-us-west-2.amazonaws.com/packer-initcron/repo/docker.tar.gz
-        
-        sudo /usr/local/bin/wget https://s3-us-west-2.amazonaws.com/packer-initcron/repo/java.tar.gz
-        
-        sudo /usr/local/bin/wget https://s3-us-west-2.amazonaws.com/packer-initcron/repo/lamp.tar.gz
-        
-        sudo /usr/local/bin/wget https://s3-us-west-2.amazonaws.com/packer-initcron/repo/puppet.tar.gz
-        
-        sudo /usr/local/bin/packer build -var-file=training-centos-6.7/vars.json.template training-centos-6.7/iptl.json
+       export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/puppetlabs/bin
+       sudo /usr/local/bin/aws s3 sync s3://packer-initcron .
+       sudo /usr/local/bin/packer build -var-file=training/vars.json.template training/iptl.json
         
   
 ###Note-
   
-  iso image must be in project directory before running packer      
+  iso image require on your machine, here it require in current dir. you can modify path as per your environment.
+  
+  
+  
+  
