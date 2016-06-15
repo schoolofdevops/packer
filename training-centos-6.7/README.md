@@ -8,7 +8,7 @@
 
 **To enable logs and run for a virtual box iso**   
 	
-	  export PACKER_LOG_PATH=./log &&  export  PACKER_LOG=1 && packer build -var-file=vars.json.template -only=virtualbox-iso packer-centos.json**	 
+	  export PACKER_LOG_PATH=./log &&  export  PACKER_LOG=1 && packer build -var-file=training-centos-6.7/vars.json.template -only=virtualbox-iso training-centos-6.5/iptl.json**	 
       
       
 ###Build using jenkins:-
